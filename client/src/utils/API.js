@@ -17,11 +17,7 @@ export default {
     },
     searchTitles: function (search) {
         console.log(search)
-        return axios.get(`https://www.googleapis.com/books/v1/volumes?q=+intitle${search}&keyAIzaSyChh-ukRrOzr0fiPZrsIJkpHCWj6FZrQK8`)
-    },
-
-    TitleDetails: function (id) {
-        return axios.get(`https://www.googleapis.com/books/v1/volumes/${id}&key=AIzaSyChh-ukRrOzr0fiPZrsIJkpHCWj6FZrQK8`)
+        return axios.get(`https://www.googleapis.com/books/v1/volumes?q=+intitle${search}&printType=books&keyAIzaSyChh-ukRrOzr0fiPZrsIJkpHCWj6FZrQK8`)
     }
 
 };
