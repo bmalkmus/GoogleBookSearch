@@ -4,13 +4,13 @@ import "./style.css";
 
 function Nav () {
     return (
-        <div>
-            <h1>Google Books</h1>
+        <div className = "navbar nav">
+            <h1 className = "navbar-brand">Google Books</h1>
             <ul>
-                <li>
-                    <a href = "/"> Search</a>
+                <li className = "links">
+                    <a href = "/search"> Search</a>
                 </li>
-                <li>
+                <li className = "links">
                     <a href = "/saved">Saved</a>
                 </li>
             </ul>

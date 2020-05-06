@@ -1,7 +1,4 @@
 import React, { useState, useEffect} from "react";
-import Wrapper from '../components/Wrapper';
-import Nav from '../components/navbar';
-import Jumbo from '../components/jumbotron';
 import TitleSearch from "../components/searchTron";
 import API from "../utils/API";
 import Card from "../components/Card"
@@ -10,7 +7,6 @@ import Card from "../components/Card"
 function Books () {
     const [search, setSearch] = useState ("Lord of the Rings");
     const [results, setResults] = useState([]);
-    // const [saved, setSaved]
 
     useEffect(() => {
         loadSearch(search)
@@ -19,6 +15,7 @@ function Books () {
     function loadSearch () {
         API.searchTitles(search)
         .then(res => {
+            console.log(res.data)
             setResults(res.data.items);
         })
         .catch(err => console.log(err));
@@ -31,28 +28,32 @@ function Books () {
         console.log(data);
         setSearch(data);
         console.log(search)
-        
-        //  let data = searchRef.current.value;
-        // setSRCH(data)
-        // searchRef.current.value = ""
     
     };
 
+    function unqBTN (event) {
+        console.log("click")
+        const id = event.target.dataset.id;
+        console.log(id);
+        API.searchID(id)
+        .then(res => {
+            console.log(res.data)
+            API.saveBook({
+                title: res.data.volumeInfo.title,
+                authors: res.data.volumeInfo.authors[0],
+                description: res.data.volumeInfo.description,
+                image: res.data.volumeInfo.imageLinks.smallThumbnail,
+                link: res.data.volumeInfo.infoLink
+            })
+            alert(`${res.data.volumeInfo.title} saved to your collection!`)
+        })
+        .catch(err => console.log(err))
 
-    // function searchBTN (event) {
-    //     event.preventDefault();
-    //     console.log(searchRef.current.value)
-    //     setSearch(searchRef.current.value)
-    //     loadSearch()
-    //     searchRef.current.value = ""
+    }
 
-
-    // };
 
     return (
-        <Wrapper>
-            <Nav/>
-            <Jumbo/>
+       <div>
             <TitleSearch  searchBTN = {searchBTN}/>
             <div>
                 <h4>Results:</h4>
@@ -65,13 +66,13 @@ function Books () {
                         image = {res.volumeInfo.imageLinks.smallThumbnail}
                         link = {res.volumeInfo.infoLink}
                         function = "Save"
-                        searchBTN = {searchBTN}
+                        id = {res.id}
+                        unqBTN = {unqBTN}
 
                     /> 
                 ))}
             </div>
-
-        </Wrapper>
+        </div>
     )
     
     

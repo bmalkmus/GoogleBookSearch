@@ -1,0 +1,7 @@
+.links{
+    display: inline-flex;
+    margin: 10px;
+}
+.nav{
+    justify-content: end;
+}

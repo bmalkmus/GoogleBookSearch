@@ -23,12 +23,15 @@ function inputChange (){
 
 
 
-   return ( <div>
+   return ( 
+   <div className = "jumbotron">
         <h4>Book Search</h4>
         <form>
             <label>Book</label>
-            <input type ="text" ref = {searchRef}  onChange = {inputChange} placeholder = "Lord of the Rings"/>
-            <button data-value = {dataset} type = "submit" onClick = {props.searchBTN}>Search</button>
+            <br/>
+            <input className ="srchBar" type ="text" ref = {searchRef}  onChange = {inputChange} placeholder = "Lord of the Rings"/>
+            <br/>
+            <button className = "searchBTN" data-value = {dataset} type = "submit" onClick = {props.searchBTN}>Search</button>
         </form>
     </div>
    )
