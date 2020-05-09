@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import SavedList from "./pages/Saved"
 import Search from "./pages/Search"
 import Wrapper from "./components/Wrapper"

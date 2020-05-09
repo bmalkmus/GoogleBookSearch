@@ -7,14 +7,7 @@ const [dataset, setDataSet] = useState("button");
 
 
 
-// const searchBTN = (event) => {
-//     event.preventDefault();
-//     console.log("click")
-//      let data = searchRef.current.value;
-//     setSRCH(data)
-//     searchRef.current.value = ""
 
-// };
 function inputChange (){
     let data = searchRef.current.value;
     setDataSet(data);
@@ -24,7 +17,7 @@ function inputChange (){
 
 
    return ( 
-   <div className = "jumbotron">
+   <div className = "jumbotron srchCont">
         <h4>Book Search</h4>
         <form>
             <label>Book</label>

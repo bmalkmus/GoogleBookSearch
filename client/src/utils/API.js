@@ -1,6 +1,6 @@
 import axios from "axios";
 
-// const key = process.env.API
+const key = process.env.REACT_APP_API
 
 export default {
     getBooks: function () {
@@ -16,7 +16,7 @@ export default {
         return axios.post("/api/books", bookData)
     },
     searchTitles: function (search) {
-        return axios.get(`https://www.googleapis.com/books/v1/volumes?q=+intitle ${search} &printType=books&keyAIzaSyChh-ukRrOzr0fiPZrsIJkpHCWj6FZrQK8`)
+        return axios.get(`https://www.googleapis.com/books/v1/volumes?q=+intitle ${search} &printType=books&key${key}`)
     },
 
     searchID: function (id) {

@@ -57,7 +57,10 @@ function Books () {
             <TitleSearch  searchBTN = {searchBTN}/>
             <div>
                 <h4>Results:</h4>
-                {results.filter(result => result.volumeInfo.authors).map(res => (
+                {results
+                .filter(result => result.volumeInfo.authors)
+                .filter(result => result.volumeInfo.readingModes.text)
+                .map(res => (
                     <Card
                         key = {res.id}
                         title = {res.volumeInfo.title}

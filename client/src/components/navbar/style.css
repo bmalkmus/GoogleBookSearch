@@ -1,7 +1,59 @@
 .links{
     display: inline-flex;
     margin: 10px;
+ 
+}
+
+a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+a:hover{
+    color: silver;
+    text-decoration: none;
 }
 .nav{
     justify-content: end;
+    background-color:black;
 }
+
+.navbar-brand{
+    background: -webkit-linear-gradient(180deg, #4285f4, #ea4335, #fbbc05, #4285f4, #34a853, #ea4335);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bolder;
+    font-family: serif;
+    font-size: 24px;
+
+}
+
+@media only screen and (max-width: 370px) {
+   .navbar-brand {
+       width: 100%;
+       text-align: center;
+
+   }
+   .list {
+    width: 50%;
+    margin-left: 25%;
+    margin-right: 25%;
+    font-size: 12px;
+
+   }
+
+}
+
+@media only screen and (max-width: 175px) {
+    .navbar-brand {
+        width: 100%;
+        text-align: center;
+        font-size: 12px;
+    }
+    .list {
+        width: 100%;
+        display: block;
+        margin: 0px;
+    }
+ }

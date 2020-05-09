@@ -6,20 +6,24 @@ function Card (props) {
 
 
     return(
-    <div>
+    <div className = "card">
         <div>
-        <div>
-            <p>{props.title}</p>
-            <p>{props.authors}</p>
+        <div className = "titles">
+            <p className = "bookTitle">{props.title}</p>
+            <p className = "Author">{props.authors}</p>
         </div>
-        <div>
+        <div className = "actions">
             <a type = "button" href = {props.link} rel="noopener noreferrer" target = "_blank" className = "View">View</a>
-            <button onClick = {props.unqBTN} data-id = {props.id}className = {props.function}>{props.function}</button>
+            <button onClick = {props.unqBTN} data-id = {props.id}className = "otherButton">{props.function}</button>
         </div>
         </div>
-        <div> 
-            <img src = {props.image} alt= {props.title}/>
-            <p>{props.description}</p>
+        <div className = "info"> 
+            <div className ="bookcover">
+            <img  className = "bookArt" src = {props.image} alt= {props.title}/>
+            </div>
+            <div className = "desc">
+                <p >{props.description}</p>
+            </div>
         </div>
     </div>
     )

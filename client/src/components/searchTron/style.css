@@ -1,9 +1,29 @@
 .srchBar {
-    width: 100%
+    width: 100%;
+    background-color: whitesmoke;
+    color: darkslategray;
 }
 
 .searchBTN {
     width: 20%;
     margin-left: 80%;
     margin-top: 10px;
+    box-shadow: 3px 3px 3px black;
+}
+
+.srchCont{
+    margin: 10px;
+    background-color: silver;
+    padding: 10px;
+    color: whitesmoke;
+    text-shadow: darkslategrey 3px 3px 3px;
+    box-shadow: 3px 3px 5px white;
+}
+
+@media only screen and (max-width: 370px) {
+    .searchBTN {
+        margin-left: 0%;
+        width: 100%;
+    }
+
 }
