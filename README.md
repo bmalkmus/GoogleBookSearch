@@ -20,8 +20,8 @@ Built with: <br>
 
 ## Screenshots<br>
 **Search Page**<br>
-![Screenshot](images/GoogleBooks.png)<br>
+![Screenshot](Screenshots/GoogleBooks.png)<br>
  <br><br>
  **Saved Books Page**<br>
-![Screenshot](images/Saved.png)<br>
+![Screenshot](Screenshots/Saved.png)<br>
 <br>
